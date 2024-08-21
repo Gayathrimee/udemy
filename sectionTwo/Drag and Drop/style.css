@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: steelblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.empty{
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    border: 3px solid #000;
+    background: #fff;
+}
+.fill{
+    background-image: url("images/photo-1723038386693-b121090524b3.avif");
+    object-fit: cover;
+    background-size: cover;
+    height: 145px;
+    width: 145px;
+}
+
+@media (max-width:800px){
+
+body{
+    flex-direction: column;
+}
+}
