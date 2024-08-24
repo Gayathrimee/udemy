@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.bg-image{
+    background-image: url("images/doggy<3.avif");
+    width: 100vw;
+    height: 100vh;
+    background-position:top center;
+    background-size: cover;
+    z-index: -111;
+    position: absolute;
+    filter: blur(20px);
+}
+.text{
+    top: 0;
+    position: relative;
+    font-size: 40px;
+    color: #ffffff;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
