@@ -92,7 +92,7 @@ h1{
 .score{
     right: 20px;
 }
-.message{
+.message, .message2{
     line-height: 1.7;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -106,7 +106,8 @@ h1{
     transform: translate(-50%, -150%);
     transition: transform 0.4s ease-in;
 }
-.message.visible{
+.message.visible,
+.message2.display{
     transform: translate(-50%, 150%);
     opacity: 1;
 }

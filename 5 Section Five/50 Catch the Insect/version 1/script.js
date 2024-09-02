@@ -4,9 +4,10 @@ const startBtn = document.getElementById('start-btn')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
 const message = document.getElementById('message')
+const messageTwo = document.getElementById('messege2')
 const gameContainer = document.getElementById('game-container')
 
-let scronds = 0
+let seconds = 0
 let score = 0
 let selectedInsect = {}
 
@@ -24,19 +25,6 @@ chooseInsectBtn.forEach(btn => {
     })
 })
 
-function createInsect(){
-    const insect = document.createElement('div')
-    insect.classList.add('insect')
-    const {x,y} = getRandomLocation()
-    insect.style.top = `${y}px`
-    insect.style.left = `${x}px`
-    insect.innerHTML = `<img src = "${selectedInsect.src}" 
-    alt = "${selectedInsect.alt}" style="transform:rotate(${Math.random() * 360}deg)" />`
-
-    insect.addEventListener('click', catchInsect)
-    gameContainer.append(insect)
-}
-
 function startGame(){
     setInterval(increaseTime, 1000)
 }
@@ -51,6 +39,19 @@ function increaseTime(){
     seconds++
 }
 
+function createInsect(){
+    const insect = document.createElement('div')
+    insect.classList.add('insect')
+    const {x,y} = getRandomLocation()
+    insect.style.top = `${y}px`
+    insect.style.left = `${x}px`
+    insect.innerHTML = `<img src = "${selectedInsect.src}" 
+    alt = "${selectedInsect.alt}" style="transform:rotate(${Math.random() * 360}deg)" />`
+
+    insect.addEventListener('click', catchInsect)
+    gameContainer.append(insect)
+}
+
 function getRandomLocation(){
     const width = window.innerWidth
     const height = window.innerHeight
@@ -59,6 +60,28 @@ function getRandomLocation(){
     return {x,y}
 }
 
-// function catchInsect(){
+function catchInsect(){
+    increaseScore()
+    this.classList.add('caught')
+    setTimeout(()=> this.remove(), 2000)
+    addInsects()
+}
 
-// }
+function addInsects(){
+    setTimeout(createInsect,1000)
+    setTimeout(createInsect,1500)
+}
+
+function increaseScore(){
+    score++
+
+    if(score > 19){
+        message.classList.add('visible')
+    } 
+    // if(score > 22){
+    //     message.classList.remove('visible')
+    //     messageTwo.classList.add('display')
+    // }
+    
+    scoreEl.innerHTML = ` Score: ${score}`
+}

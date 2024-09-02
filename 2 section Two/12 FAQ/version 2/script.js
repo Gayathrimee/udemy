@@ -45,3 +45,25 @@ toggles.forEach(toggle =>{
     })
 })
 // and the only problem in my pgm is I did'nt add parentNode :(
+
+
+// version 3
+
+// const toggleIn = document.querySelectorAll('.faq-toggle')
+// const faq = document.querySelectorAll('.faq')
+
+// toggleIn.forEach(toggle =>{
+//     toggle.addEventListener('click',()=>{
+//         faq.classList.add('active')
+//     })
+// })
+
+//version 3.2
+
+const toggleIn = document.querySelectorAll('.faq-toggle')
+
+toggleIn.forEach(toggle =>{
+    toggle.addEventListener('click',()=>{
+        toggle.parentNode.classList.toggle('active')
+    })
+}) 
