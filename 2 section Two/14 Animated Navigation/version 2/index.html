@@ -7,7 +7,6 @@
     <title>Animated Navigation</title>
 </head>
 <body>
-    <div class="container">
         <nav class="active" id="things">
             <ul>
                 <li><a href="">Home</a></li>
@@ -15,13 +14,21 @@
                 <li><a href="">above</a></li>
                 <li><a href="">contacts</a></li>
             </ul>
-        </nav>
         
         <button class="icons" id="toggle">
             <div class="line line1"></div>
             <div class="line line2"></div>
         </button>
-    </div>
-  <script></script>  
+    </nav>
+  <script>
+
+    const nav = document.getElementById('things')
+    const toggles = document.getElementById('toggle')
+
+    toggles.addEventListener('click', () => {
+        nav.classList.toggle('active')
+    })
+
+  </script>  
 </body>
 </html>

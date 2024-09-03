@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Muli';
+    background-image:linear-gradient(to top,#dedede 50%, #fe02f2 100%);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+.circles{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    position: relative;
+}
+.circle{
+    /* margin: 10px; */
+    display: flex;
+    border: 2px solid #bdbdbd;
+    border-radius: 50%;
+    /* color:lightseagreen; */
+    font-weight: bold;
+    padding: 6px 11px;
+    text-align: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: all 0.6s ease-in-out;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.indicator{
+    width:95.5%;
+    background-color: #14bdbd;
+    height: 3px;
+    /* top:25px; */
+    top: 50%;
+    position: absolute;
+    z-index: -22;
+    width: 0%;
+    transition: width 0.6s linear;
+}
+.circles::before{
+    position: absolute;
+    content: ''; 
+    width: 95.5%;
+    background-color: #cc9e9e;
+    height: 3px;
+    top: 50%;
+    z-index: -222;
+}
+.circle.active{
+    border: 3px solid #a4a411;
+    padding: 5px 10px;
+}
+button{
+    padding: 10px;
+    margin: 10px;
+    min-width:100px;
+    border-radius: 5px;
+    border: none;
+    background: #72287f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+}
+button:active{
+    transform: scale(0.98);
+}
+button:disabled{
+    background-color: #8f7f7f;
+    cursor: not-allowed;
+}

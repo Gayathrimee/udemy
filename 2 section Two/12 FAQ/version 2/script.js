@@ -60,10 +60,10 @@ toggles.forEach(toggle =>{
 
 //version 3.2
 
-const toggleIn = document.querySelectorAll('.faq-toggle')
+// const toggleIn = document.querySelectorAll('.faq-toggle')
 
-toggleIn.forEach(toggle =>{
-    toggle.addEventListener('click',()=>{
-        toggle.parentNode.classList.toggle('active')
-    })
-}) 
+// toggleIn.forEach(toggle =>{
+//     toggle.addEventListener('click',()=>{
+//         toggle.parentNode.classList.toggle('active')
+//     })
+// }) 
