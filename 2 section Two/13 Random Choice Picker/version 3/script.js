@@ -15,7 +15,7 @@ textArea.addEventListener('keyup',(e)=>{
     }
 })
 
-function createTags(){
+function createTags(input){
     const taggs = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
 
     tagsElement.innerHTML = ''
@@ -60,4 +60,7 @@ function pickRandomTag(){
 
 function highlightTag(tag){
     tag.classList.add('highlight')
+}
+function unHighlightTag(tag){
+    tag.classList.remove('highlight')
 }

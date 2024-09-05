@@ -47,7 +47,7 @@ const sliders = document.querySelectorAll('.slide')
 const lBtn = document.getElementById('left')
 const rBtn = document.getElementById('right')
 
-let currentSlide = 0
+let currentSlide
 
 rBtn.addEventListener('click',()=>{
      currentSlide++
@@ -57,9 +57,11 @@ rBtn.addEventListener('click',()=>{
      }
 
      setBg()
+
+     setFg()
 })
 
-rBtn.addEventListener('click',()=>{
+lBtn.addEventListener('click',()=>{
     currentSlide--
 
     if(currentSlide < 0){
@@ -67,8 +69,17 @@ rBtn.addEventListener('click',()=>{
     }
 
     setBg()
+    setFg()
 })
+
+setBg()
 
 function setBg(){
     inBody.style.background = sliders[currentSlide].style.background
 } 
+
+function setFg(){
+    slides.forEach((slide) => slide.classList.remove('active'))
+
+    slides[activeSlide].classList.add('active')
+}
