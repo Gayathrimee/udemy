@@ -6,14 +6,15 @@ fill.addEventListener('dragend', endDrag)
 
 for(const empty of empties){
     empty.addEventListener('dragover', overDrag)
-    empty.addEventListener('dragEnter', enterDrag)
+    empty.addEventListener('dragenter', enterDrag)
     empty.addEventListener('dragleave', leaveDrag)
     empty.addEventListener('drop',dropDrag)
 }
 
 function doDrag(){
-    this.className =+ 'hold'
+    this.className += ' hold'
     setTimeout(() => this.className = 'invisible', 0)
+    console.log(this.className)
 }
 
 function endDrag(){
@@ -27,7 +28,7 @@ function overDrag(e){
 
 function enterDrag(e){
     e.preventDefault()
-    this.className += 'hovered'
+    this.className += ' hovered'
 }
 
 function leaveDrag(){
