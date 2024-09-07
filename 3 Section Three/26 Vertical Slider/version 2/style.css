@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Open Sans',sans-serif;
+    height: 100vh;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.left{
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.left div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.right{
+    height: 100%;
+    position: absolute;
+    width: 65%;
+    right: 0;
+    /* left: 50%; */
+    top: 0;
+}
+.right div{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+button{
+    padding:7px;
+    border: none;
+    cursor: pointer;
+}
+.container .arrows button{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+.arrows .down{
+    transform: translateX(-100%);
+}
+.arrows .up{
+    transform: translateY(-100%);
+}

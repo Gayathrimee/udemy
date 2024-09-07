@@ -1,36 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
 *{
     box-sizing: border-box;
 }
+
 body{
-    background-color: #2c3e50;
-    font-family: 'Muli', sans-serif;
+    background-color: #000;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    justify-content: center;    
     margin: 0;
+    height: 100vh;
 }
 .kinetic{
     position: relative;
-    height: 80px;
-    width: 80px;
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid #fff; */
 }
 .kinetic::after, .kinetic::before{
-    content: '';
     position: absolute;
+    content: '';
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 0;
-    height: 0;
-    border:50px solid transparent;
+    right: 0;
+    border: 50px solid transparent;
     border-bottom-color: #fff;
-    /* border-top-color: #fff; */
-    /* border-left-color: #fff;
-    border-right-color: #fff; */
     animation: rotateA 2s linear infinite 0.5s;
 }
 .kinetic::before{
@@ -38,13 +32,11 @@ body{
     animation: rotateB 2s linear infinite;
 }
 
-@keyframes rotateA{
-    0%,
-    25%{
+@keyframes rotateA {
+    0%,25%{
         transform: rotate(0deg);
     }
-    50%,
-    75%{
+    50%, 75%{
         transform: rotate(180deg);
     }
     100%{
@@ -52,13 +44,11 @@ body{
     }
 }
 
-@keyframes rotateB{
-    0%,
-    25%{
+@keyframes rotateB {
+    0%,25%{
         transform: rotate(90deg);
     }
-    50%,
-    75%{
+    50%,75%{
         transform: rotate(270deg);
     }
     100%{

@@ -147,3 +147,31 @@ function drawCircle(x2,y2){
     ctx.arc(size,0,Math.pi * 2)
     ctx.color.style = e.target.color
 }
+
+function drawLine(x,y,x2,y2){
+    ctx.beginPath()
+    ctx.arc(size,0,Math.pi * 2)
+    ctx.color.style = e.target.color
+    ctx.line(x,y,x2,y2)
+}
+
+increase.addEventListener('click',()=>{
+    size += 2
+
+    if(size > 50){
+        size = 50
+    } 
+
+    sizeBtn.innerText = size
+
+})
+
+decrease.addEventListener('click', ()=>{
+    size -= 2
+
+    if(size < 2){
+        size = 2
+    }
+
+    sizeBtn.innerText = size
+})
