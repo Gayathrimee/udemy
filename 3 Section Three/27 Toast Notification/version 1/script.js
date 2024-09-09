@@ -32,4 +32,4 @@ function getRandomMessage(){
 
 function getRandomType(){
     return types[Math.floor(Math.random() * types.length)]
-}
+}                  
