@@ -80,4 +80,3 @@ function theText(){
 theText()
 
 speedEl.addEventListener('change', ()=> speed = 300 / speedEl.value)
-
