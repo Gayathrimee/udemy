@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.container{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    width: 300px;
+}
+.header{
+    background-color: #3e57;
+    color: #000;
+    /* font-weight: bold; */
+    padding: 30px 20px;
+}
+.title{
+    margin: 0;
+}
+.subtitle{
+    display: inline-block;
+    margin: 5px 0 20px;
+    opacity: 0.8;
+}
+.header input{
+    background-color: rgba(144, 138, 138, 0.2);
+    border: 0;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #000;
+}
+.header input:focus{
+    outline-color: #3e57;
+}
+.header input::placeholder{
+    color: #fff;
+    opacity: 0.8;
+}
+.result{
+    background-color: #fefe;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    height: 100%;
+    overflow-y: auto;
+}
+.result li{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.result img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.user-info{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.user-info h4, .user-info p{
+    margin: 0;
+}
+.user-info h4{
+    color: #000;
+}
+.user-info p{
+    font-size: 13px;
+    opacity: 0.8;
+}
+.result li.hide{
+    display: none;
+}
+.result li:not(:last-of-type){
+    border-bottom: 1px solid #fefefe;
+}
