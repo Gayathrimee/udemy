@@ -70,20 +70,21 @@ function catchTheInsect(){
 
 function increaseScore(){
     score++
-    if(score > 4){
+  
+    if(score > 19 && score<= 25){
         message.classList.add('visible')
 
-        if(score > 7){
-            setTimeout(()=>{
-                message.classList.remove('visible')
-            })
-        }
+    } else if(score > 25){
+        message.classList.remove('visible')
     }
 
-    if( score > 10){
+    if(score > 50 && score <= 56){
         message.classList.add('visible')
-        changeMessage()
-    }                               
+        message.innerHTML = `You still think you can win? <br> Quit Already!!`
+
+    } else if(score > 56){
+        message.classList.remove('visible')
+    }
 
     let newScore = score < 10 ? `0${score}` : score
     scoreElement.innerHTML =  `score: ${newScore}`
@@ -93,11 +94,4 @@ function increaseScore(){
 function addInsects(){
     setTimeout(createInsect, 1000)
     setTimeout(createInsect, 1500)
-} 
-
-function changeMessage(){
-    const newMessage = document.getElementById('message')
-    // newMessage.className = 'message'
-    newMessage.innerHTML = `You still think you can win? <br> Quit Already!!`
-    message.append(newMessage)
-}                                                                
+}
