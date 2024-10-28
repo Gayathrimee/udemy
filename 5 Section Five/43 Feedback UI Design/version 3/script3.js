@@ -10,42 +10,33 @@ const ratingEmojis = {
     'Satisfied':'😍'
 };
 
-// console.log(ratingEmojis)          
+let defautlRating = 'satisfied'
 
-let defaultRating = 'Satisfied';
-       
-rateContainer.addEventListener('click',(e)=>{
-    
-    if(e.target.parentNode.classList.contains('rating') && e.target.nextElementSibling){
+rateContainer.addEventListener('click', (e) =>{
+    if(
+        e.target.parentNode.classList.contains('rating') &&
+         e.target.nextElementSibling
+        ){
         removeActive()
         e.target.parentNode.classList.add('active')
-        defaultRating = e.target.nextElementSibling.innerHTML
-
+        defautlRating = e.target.nextElementSibling.innerHTML
+    
     } else if(
         e.target.parentNode.classList.contains('rating') &&
         e.target.previousSibling && 
         e.target.previousElementSibling.nodeName === 'IMG'
-    ) {
+    ){
         removeActive()
         e.target.parentNode.classList.add('active')
-        defaultRating = e.target.innerHTML
+        defautlRating = e.target.innerHTML
     }
 })
 
-btn.addEventListener('click',(e) =>{
-    
-    const emoji = ratingEmojis[defaultRating] || '?';   //default emoji if not found
+btn.addEventListener('click', () =>{
+    const emoji = ratingEmojis[defautlRating] || '?'
 
-    panel.innerHTML = `
-    <div class="thank">
-    <i class="fas fa-heart"></i>
-    <strong>Thank You!</strong>
-    <br>
-    </div>
-    <strong>Feedback : ${defaultRating} ${emoji}</strong>
-    <p>We'll use your feedback to improve our customer support</p>`
+    panel.innerHTML = ``
 })
-
 
 function removeActive(){
     for(let i = 0; i < rating.length; i++){
