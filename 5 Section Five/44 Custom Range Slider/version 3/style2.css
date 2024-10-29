@@ -1,0 +1,27 @@
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+}
+h2{
+    position: absolute;
+    top: 10px;
+}
+.range-container{
+    position: relative;
+}
+input{
+    width: 300px;
+    margin: 18px 0;
+}
+input + label{
+    background-color: #fff;
+    position: absolute;
+    top: -24px;
+    left: 42%;
+    border-radius: 5px;
+}
